@@ -1,0 +1,114 @@
+{
+  "මම": {
+    "en": "I",
+    "pos": "PRON",
+    "role": "SUBJ",
+    "number": "SINGULAR"
+  },
+  "අපි": {
+    "en": "we",
+    "pos": "PRON",
+    "role": "SUBJ",
+    "number": "PLURAL"
+  },
+  "එයාලා": {
+    "en": "they",
+    "pos": "PRON",
+    "role": "SUBJ",
+    "number": "PLURAL"
+  },
+  "ගෙදර": {
+    "en": "home",
+    "pos": "NOUN",
+    "role": "OBJ",
+    "number": "SINGULAR"
+  },
+  "පොත": {
+    "en": "book",
+    "pos": "NOUN",
+    "role": "OBJ",
+    "number": "SINGULAR"
+  },
+  "පොත්": {
+    "en": "book",
+    "pos": "NOUN",
+    "role": "OBJ",
+    "number": "PLURAL"
+  },
+  "අහසෙ": {
+    "en": "sky",
+    "pos": "NOUN",
+    "role": "LOC",
+    "number": "SINGULAR",
+    "preposition_hint": "in"
+  },
+  "යනවා": {
+    "en": "go",
+    "pos": "VERB",
+    "tense": "PRESENT_CONTINUOUS"
+  },
+  "ගියා": {
+    "en": "go",
+    "pos": "VERB",
+    "tense": "PAST"
+  },
+  "කියවනවා": {
+    "en": "read",
+    "pos": "VERB",
+    "tense": "PRESENT_CONTINUOUS"
+  },
+  "ලියනවා": {
+    "en": "write",
+    "pos": "VERB",
+    "tense": "PRESENT_CONTINUOUS"
+  },
+  "ලියුවා": {
+    "en": "write",
+    "pos": "VERB",
+    "tense": "PAST"
+  },
+  "ලිවුවා": {
+    "en": "write",
+    "pos": "VERB",
+    "tense": "PAST"
+  },
+  "ඉන්නවා": {
+    "en": "are",
+    "pos": "VERB",
+    "tense": "PRESENT_CONTINUOUS",
+    "context": "BE_VERB"
+  },
+  "ගත්තා": {
+    "en": "buy",
+    "pos": "VERB",
+    "tense": "PAST"
+  },
+  "මල්": {
+    "en": "flower",
+    "pos": "NOUN",
+    "role": "OBJ",
+    "number": "PLURAL"
+  },
+  "පරණ": {
+    "en": "old",
+    "pos": "ADJ",
+    "role": "MODIFIER"
+  },
+  "අලුත්": {
+    "en": "new",
+    "pos": "ADJ",
+    "role": "MODIFIER"
+  },
+  "නැහැ": {
+    "en": "not",
+    "pos": "NEGATION_MARKER",
+    "role": "NEGATION"
+  },
+  "පොතක්": {
+    "en": "book",
+    "pos": "NOUN",
+    "role": "OBJ",
+    "number": "SINGULAR",
+    "indefinite_article": true
+  }
+}

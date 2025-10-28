@@ -1,26 +1,54 @@
-"""
-Module 2: RBMT Translation Engine - Test Script
-Student 2
+import json
+import os
+from module2 import translate # Import the core function
+from module2 import LEXICON_FILE # Import the constants to ensure consistency
 
-This script tests the translate function against the shared corpus.json.
-It verifies that Sinhala input is correctly translated to structured English.
+# --- Constants ---
+CORPUS_FILE = 'corpus.json'
 
-Usage:
-    python test_module2.py
+def run_tests():
+    """Reads corpus data and tests the translate function from module2."""
+    print("--- Starting Independent Test for Module 2 (RBMT) ---")
+    
+    if not os.path.exists(LEXICON_FILE):
+        print(f"Test FAILED: Required data file {LEXICON_FILE} not found. Please create it.")
+        return
+        
+    if not os.path.exists(CORPUS_FILE):
+        print(f"Test FAILED: Corpus file {CORPUS_FILE} not found. Please create it.")
+        return
 
-Expected Output:
-    PASS/FAIL for each test case with detailed assertions
-    Final summary: "All tests passed!" or error count
-"""
+    try:
+        with open(CORPUS_FILE, 'r', encoding='utf-8') as f:
+            test_corpus = json.load(f)
+        print(f"Test data loaded successfully from {CORPUS_FILE}.")
+    except Exception as e:
+        print(f"ERROR loading corpus: {e}")
+        return
 
-# TODO: Implement test harness
-# Steps:
-# 1. Import the translate function from module2
-# 2. Load corpus.json from parent directory
-# 3. For each item in corpus:
-#    - Run: actual_dict = translate(item['sinhala'])
-#    - Create expected output dictionary based on reference
-#    - Assert key values (raw_translation, subject, verb, object)
-#    - Print: PASS or FAIL with details
-# 4. Print final summary with pass/fail count
+    for item in test_corpus:
+        sinhala_input = item.get('sinhala')
+        if not sinhala_input:
+            continue
+            
+        reference = item.get('english_reference', 'N/A')
+        
+        print(f"\n[Test ID: {item.get('id', 'N/A')}]")
+        print(f"  Input (Sinhala): {sinhala_input}")
+        
+        output_dict = translate(sinhala_input)
+        
+        # Display results
+        print(f"  Expected Fluent Output (For Module 3): {reference}")
+        print("  Module 2 SVO Output (Raw English):", output_dict.get('raw_translation'))
+        print("  Module 2 Output (Structured Dictionary):")
+        print(json.dumps(output_dict, indent=4, ensure_ascii=False))
+        
+        # Simple status check
+        if output_dict.get('subject') and output_dict.get('verb'):
+            print("  STATUS: SUCCESS - Core parsing detected (SUBJ and VERB).")
+        else:
+            print("  STATUS: FAIL - Missing core component(s). Check lexicon/parsing logic.")
 
+if __name__ == '__main__':
+    run_tests()

@@ -24,39 +24,6 @@ Input (Singlish)
   -> BLEU Score
 ```
 
-## Module 1: Advanced Enhancements ✨
-
-Module 1 has been significantly enhanced with advanced FST features and comprehensive documentation:
-
-**🎯 Advanced Features:**
-- ✅ N-best path generation with confidence scoring
-- ✅ Out-of-Vocabulary (OOV) detection with suggestions
-- ✅ Character-level alignment visualization
-- ✅ Ambiguity detection and analysis
-- ✅ Rule usage statistics and coverage analysis
-- ✅ Interactive CLI with real-time transliteration
-
-**📊 Analysis Tools:**
-- `ambiguity_analyzer.py` - Detect and analyze transliteration ambiguities
-- `rule_analyzer.py` - Comprehensive rule usage and coverage statistics
-- `alignment_visualizer.py` - Multiple visualization styles (table/inline/detailed)
-- `interactive_transliterator.py` - Interactive CLI interface
-
-**📚 Comprehensive Documentation:**
-- `MODULE1_REPORT.md` - 2000+ line academic technical report with FST theory
-- `API_REFERENCE.md` - Complete API documentation with examples
-- `ENHANCEMENTS_SUMMARY.md` - Detailed enhancement overview
-
-**📈 Statistics:**
-- Code: 269 → 4833+ lines (1696% growth)
-- Test Accuracy: 100% (25/25 sentences)
-- Performance: <1ms per word transliteration
-- Documentation: 3000+ lines
-
-See `module1/ENHANCEMENTS_SUMMARY.md` for complete details.
-
----
-
 ## Installation
 
 1. **Clone the repository**
@@ -112,46 +79,12 @@ singlish-english-translator/
 
 ## Usage
 
-### Module 1: Advanced FST Transliteration Engine
+### Module 1: Build and Test FST
 
-**Basic Usage:**
 ```bash
 cd module1
 python build_fst.py          # Compile the FST
-python test_module1.py       # Test transliteration (100% accuracy)
-```
-
-**Advanced Features:**
-```bash
-# Interactive transliterator with real-time feedback
-python interactive_transliterator.py
-
-# Analyze rule usage and coverage
-python rule_analyzer.py
-
-# Detect ambiguities in transliteration
-python ambiguity_analyzer.py
-
-# Visualize character alignments
-python alignment_visualizer.py "mama gedara yanawa"
-```
-
-**Programmatic Usage:**
-```python
-from module1 import (transliterate, transliterate_nbest, 
-                     detect_oov, get_alignment)
-
-# Basic transliteration
-result = transliterate("mama gedara yanawa")
-
-# Get n-best alternatives with confidence scores
-alternatives = transliterate_nbest("mama", n=3, return_scores=True)
-
-# Detect out-of-vocabulary segments
-oov_info = detect_oov("mama xyz yanawa")
-
-# Get character-level alignment
-alignment = get_alignment("mama gedara")
+python test_module1.py       # Test transliteration
 ```
 
 ### Module 2: Test Translation

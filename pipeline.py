@@ -22,15 +22,15 @@ import json
 from typing import Dict, Any
 
 # Add module directories to path
-sys.path.insert(0, os.path.join(os.path.dirname(__file__), 'module1'))
-sys.path.insert(0, os.path.join(os.path.dirname(__file__), 'module2'))
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), 'transliteration'))
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), 'translation'))
 
 try:
     from module1 import transliterate
     from module2 import translate
 except ImportError as e:
     print(f"Error: Failed to import modules. Make sure FST is built.")
-    print(f"Run: cd module1 && python build_fst.py")
+    print(f"Run: cd transliteration && python build_fst.py")
     print(f"Details: {e}")
     sys.exit(1)
 

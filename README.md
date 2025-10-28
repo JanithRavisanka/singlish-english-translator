@@ -77,28 +77,29 @@ Input (Singlish)
 singlish-english-translator/
 ├── README.md
 ├── requirements.txt
-├── pipeline.py                 # ⭐ Integrated Module 1 + 2 pipeline
+├── pipeline.py                 # ⭐ Integrated full pipeline
+├── run_evaluation.py           # ⭐ Complete evaluation with BLEU scores
 ├── test_pipeline.py            # Pipeline integration tests
 ├── data/                       # Shared data files
 │   ├── corpus.json             # 50 test sentences (Singlish, Sinhala, English)
-│   ├── singlish_rules.json     # 266 transliteration rules (Module 1)
-│   └── lexicon.json            # 68-word bilingual dictionary (Module 2)
-├── module1/                    # FST Transliteration Engine
+│   ├── singlish_rules.json     # 266 transliteration rules
+│   └── lexicon.json            # 68-word bilingual dictionary
+├── transliteration/            # Module 1: FST Transliteration Engine
 │   ├── build_fst.py            # FST compiler
 │   ├── module1.py              # Main transliteration module
 │   ├── preprocess.py           # Preprocessing (Unicode, punctuation, numbers)
 │   ├── fuzzy_matcher.py        # Spell correction engine
-│   ├── test_module1.py         # Module 1 tests
+│   ├── test_module1.py         # Comprehensive tests (77 tests)
 │   └── transliterate.fst       # Generated FST model
-├── module2/                    # RBMT Translation Engine
+├── translation/                # Module 2: RBMT Translation Engine
 │   ├── module2.py              # Rule-based parser
 │   └── test_module2.py         # Module 2 tests
-└── module3/                    # Post-Processor & Evaluator (Not Yet Implemented)
+└── evaluation/                 # Module 3: Post-Processor & Evaluator
     ├── module3.py              # Post-processing rules
-    ├── test_module3.py         # Module 3 tests
-    ├── run_evaluation.py       # Evaluation runner
+    ├── test_module3.py         # Module 3 tests (10 tests)
+    ├── README.md               # Module 3 documentation
     ├── human_evaluation_sheet.csv
-    └── evaluation_report.md
+    └── evaluation_report.md    # Comprehensive evaluation findings
 ```
 
 ## Usage
@@ -132,25 +133,27 @@ Step 2 (English):  I go home
 ✓ Translation successful
 ```
 
-### Module 1: Build and Test FST
+### Module 1: Build and Test Transliteration
 
 ```bash
-cd module1
+cd transliteration
 python build_fst.py          # Compile the FST
-python test_module1.py       # Test transliteration
+python test_module1.py       # Test transliteration (77 tests)
 ```
 
 ### Module 2: Test Translation
 
 ```bash
-cd module2
+cd translation
 python test_module2.py       # Test RBMT engine
 ```
 
-### Module 3: Run Full Pipeline Evaluation (Not Yet Implemented)
+### Module 3: Test Post-Processing & Run Full Evaluation
 
 ```bash
-cd module3
+cd evaluation
+python test_module3.py       # Test post-processing (10 tests)
+cd ..
 python run_evaluation.py     # Execute end-to-end pipeline and calculate BLEU score
 ```
 

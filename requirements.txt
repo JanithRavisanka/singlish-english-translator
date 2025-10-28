@@ -1,0 +1,11 @@
+# Singlish-to-English NLP Translator Dependencies
+
+# Module 1: FST Transliteration Engine
+pynini>=2.1.5
+
+# Module 3: Evaluation
+nltk>=3.8
+
+# Standard library (no installation needed)
+# json - for reading/writing shared data files
+

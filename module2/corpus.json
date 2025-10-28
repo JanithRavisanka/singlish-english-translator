@@ -10,5 +10,53 @@
     "sinlish": "eyala potha kiyawanawa",
     "sinhala": "එයාලා පොත කියවනවා",
     "english_reference": "They are reading the book."
+  },
+  {
+    "id": 3,
+    "sinlish": "api aluth poth liyanawa",
+    "sinhala": "අපි අලුත් පොත් ලියනවා",
+    "english_reference": "We are writing new books."
+  },
+  {
+    "id": 4,
+    "sinlish": "mama gedara giya",
+    "sinhala": "මම ගෙදර ගියා",
+    "english_reference": "I went home."
+  },
+  {
+    "id": 5,
+    "sinlish": "eyala parana poth liyuwa",
+    "sinhala": "එයාලා පරණ පොත් ලිවුවා",
+    "english_reference": "They wrote old books."
+  },
+  {
+    "id": 6,
+    "sinlish": "mama potha kiyawanawa naha",
+    "sinhala": "මම පොත කියවනවා නැහැ",
+    "english_reference": "I am not reading the book."
+  },
+  {
+    "id": 7,
+    "sinlish": "api ahase indanawa",
+    "sinhala": "අපි අහසෙ ඉන්නවා",
+    "english_reference": "We are in the sky."
+  },
+  {
+    "id": 8,
+    "sinlish": "eyala gedara naha",
+    "sinhala": "එයාලා ගෙදර නැහැ",
+    "english_reference": "They are not home."
+  },
+  {
+    "id": 9,
+    "sinlish": "mama aluth pothak gatta",
+    "sinhala": "මම අලුත් පොතක් ගත්තා",
+    "english_reference": "I bought a new book."
+  },
+  {
+    "id": 10,
+    "sinlish": "api parana mal liyuwa",
+    "sinhala": "අපි පරණ මල් ලිවුවා",
+    "english_reference": "We wrote about old flowers."
   }
 ]

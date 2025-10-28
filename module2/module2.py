@@ -19,10 +19,8 @@ except json.JSONDecodeError:
 def translate(sinhala_text: str) -> Dict[str, Any]:
     """
     Translates a clean Sinhala string into a structured English dictionary, 
-    performing the SOV -> SVO structural transformation in the process.
-    
-    This function currently handles: SUBJ, OBJ, VERB, and applies the SOV -> SVO 
-    transfer rule to the 'raw_translation' field.
+    performing the SOV -> SVO structural transformation in the process,
+    and handling Modifiers (Adjectives) and Negation.
     """
     
     if not sinhala_text or not lexicon:
@@ -34,10 +32,10 @@ def translate(sinhala_text: str) -> Dict[str, Any]:
     subject_info: Dict[str, Any] = {}
     object_info: Dict[str, Any] = {}
     verb_info: Dict[str, Any] = {}
-    is_negated: bool = False # Negation flag
+    is_negated: bool = False
     
-    # Placeholder for collecting modifiers or other complex roles later
-    modifiers: List[Dict[str, Any]] = [] 
+    # List to hold modifiers (adjectives) and associate them with the object they precede.
+    object_modifiers: List[str] = []
     
     # 2. Lexical Analysis & 3. Syntactic Parse
     for token in tokens:
@@ -50,42 +48,69 @@ def translate(sinhala_text: str) -> Dict[str, Any]:
             if role == 'SUBJ':
                 # Capture all subject features
                 subject_info = {k: v for k, v in word_data.items() if k != 'role'} 
-            elif role == 'OBJ':
-                # Capture all object features
-                object_info = {k: v for k, v in word_data.items() if k != 'role'}
             elif pos == 'VERB':
                 # Capture all verb features
                 verb_info = {k: v for k, v in word_data.items() if k != 'role'}
             elif role == 'NEGATION':
+                # Set the negation flag
                 is_negated = True
             elif role == 'MODIFIER':
-                # Place for future development: handling adjectives/adverbs
-                modifiers.append({k: v for k, v in word_data.items() if k != 'role'})
+                # Adjectives precede the noun in Sinhala (SOV order), so we collect them here.
+                object_modifiers.append(word_data['en'])
+            elif role == 'OBJ':
+                # Capture all object features
+                object_info = {k: v for k, v in word_data.items() if k != 'role'}
+                
+                # Attach collected modifiers to the object they precede in the Sinhala sentence.
+                if object_modifiers:
+                    object_info['modifiers'] = object_modifiers
+                # Reset modifiers for the next object
+                object_modifiers = [] 
             
         else:
-            # When integrating, Module 1 should ensure all tokens are Sinhala. 
-            # This warning helps debug lexicon gaps.
+            # The warning message is useful but we must continue processing
             print(f"Module 2 WARNING: Token '{token}' not found in lexicon. This will affect output.")
             
-    # 4. Translation Model (Transfer Rules): SOV -> SVO for raw_translation
-    ordered_parts: List[str] = []
+    # 4. Implicit Verb Handling (Fix for Test ID 8)
+    # If no explicit verb is found, but there is a subject and either negation or a locational object, 
+    # we must assume an implicit 'to be' verb for the English SVO structure.
+    # Note: The object role 'LOC' (from 'අහසෙ') or 'NEGATION' (from 'නැහැ') often implies 'to be'
+    is_locational_or_negated = object_info.get('role') == 'LOC' or is_negated
     
-    # 1. Subject (S)
-    if subject_info:
-        ordered_parts.append(subject_info['en'])
+    if not verb_info and subject_info and is_locational_or_negated:
+        # Using 'be' and letting Module 3 refine the conjugation (is/am/are)
+        verb_info = {
+            "en": "be", 
+            "pos": "VERB", 
+            "tense": "PRESENT_CONTINUOUS", 
+            "context": "IMPLICIT_BE" # New context tag for Module 3
+        }
+        # In the raw output, we use 'be' to ensure the V slot is occupied.
+        # This fixes the raw output for Test 8: "they home" -> "they be home"
+        ordered_parts_raw = [subject_info['en'], verb_info['en']] 
+    else:
+        # Standard SVO ordering for the raw output
+        ordered_parts_raw = [subject_info['en']] if subject_info else []
+        if verb_info:
+            ordered_parts_raw.append(verb_info['en'])
+
+
+    # 5. Translation Model (Transfer Rules): SOV -> SVO for raw_translation
     
-    # 2. Verb (V) - We use the base English verb here
-    if verb_info:
-        ordered_parts.append(verb_info['en'])
-        
-    # 3. Object (O) - Place objects and modifiers after the verb
+    # 3. Object (O) - Add modifiers before the object noun for the raw SVO output.
     if object_info:
-        # Note: If we had a list of modifiers, we'd insert them here before the object.
-        ordered_parts.append(object_info['en'])
-    
-    # 5. Generate Output Dictionary (The final deliverable structure for Module 3)
+        # Add indefinite article 'a/an' if the feature is present in the object info
+        if object_info.get('indefinite_article'):
+            # Simple heuristic: use 'a' for raw, let Module 3 handle a/an rules
+            ordered_parts_raw.append('a') 
+        
+        if 'modifiers' in object_info:
+            ordered_parts_raw.extend(object_info['modifiers']) # Adds the adjective
+        ordered_parts_raw.append(object_info['en']) # Adds the noun
+
+    # 6. Generate Output Dictionary (The final deliverable structure for Module 3)
     translation_dict = {
-        "raw_translation": " ".join(ordered_parts), 
+        "raw_translation": " ".join(ordered_parts_raw), 
         "subject": subject_info,
         "object": object_info,
         "verb": verb_info,
@@ -93,3 +118,8 @@ def translate(sinhala_text: str) -> Dict[str, Any]:
     }
     
     return translation_dict
+
+# --- TEST HARNESS (Placeholder - actual test logic is in test_module2.py) ---
+if __name__ == '__main__':
+    # Placeholder for local testing if needed
+    pass

@@ -1,2 +1,19 @@
-Sentence_ID,Source_Text,Machine_Translation,Adequacy,Fluency,Comments
+Sentence_ID,Source_Text,Reference_Translation,Machine_Translation,Adequacy (1-5),Fluency (1-5),Comments
+1,mama gedara yanawa,I am going home.,,,"Instructions: Rate each translation on a scale of 1-5 for Adequacy and Fluency.
 
+Adequacy Scale (Does the translation preserve meaning?):
+5 = All meaning is preserved; no information is lost or added
+4 = Most meaning is preserved; minor details may be missing
+3 = Much meaning is preserved; some important information may be missing
+2 = Little meaning is preserved; significant information is lost
+1 = No meaning is preserved; translation is incomprehensible
+
+Fluency Scale (How natural does the English sound?):
+5 = Perfect, natural English; no errors
+4 = Good English; minor grammatical errors that don't affect understanding
+3 = Acceptable English; some grammatical errors but still understandable
+2 = Poor English; many grammatical errors; difficult to understand
+1 = Very poor English; completely ungrammatical
+
+Fill in the Machine_Translation column after running: python run_evaluation.py --save-results
+Then rate each translation and provide comments on specific errors."

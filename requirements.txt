@@ -9,6 +9,9 @@ pynini
 # Module 3: Evaluation
 nltk
 
+# Module 1: Unicode handling
+unidecode
+
 # Standard library (no installation needed)
 # json - for reading/writing shared data files
 

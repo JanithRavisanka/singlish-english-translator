@@ -31,6 +31,124 @@ except Exception as e:
     print(f"Error importing module1: {e}")
     sys.exit(1)
 
+def test_unicode():
+    """Test Unicode to ASCII conversion capabilities."""
+    
+    print(f"Testing Unicode Handling Features")
+    print(f"=" * 60)
+    print()
+    
+    # Test cases for Unicode conversion
+    unicode_tests = [
+        # (input, expected_output, test_name)
+        ("mama gedära yanawa", "මම ගෙදර යනවා", "Unicode: ä → a"),
+        ("café mama yanawa", "කාෆ්එ මම යනවා", "Unicode: é → e"),
+        ("naïve oya iskole", "නඉවෙ ඔය ඉස්කෝලේ", "Unicode: ï → i"),
+        ("résumé potha", "ර්එස්උම්එ පොත", "Unicode: é multiple"),
+        ("Mama Gëdara Yanawa", "මම ගෙදර යනවා", "Unicode: ë → e"),
+        ("São Paulo", "ස පඋලො", "Unicode: ã → a, au"),
+        ("Schön mama", "ස්ච්ඔන් මම", "Unicode: ö → o"),
+        ("mama gedara yañawa", "මම ගෙදර යනවා", "Unicode: ñ → n"),
+        ("Hëllo Wörld", "හ්එල්ලො ව්ඔර්ල්ද්", "Unicode: ë, ö multiple"),
+        ("CAFÉ OYA", "කාෆ්එ ඔය", "Unicode: uppercase + accent"),
+    ]
+    
+    pass_count = 0
+    fail_count = 0
+    
+    for input_text, expected, test_name in unicode_tests:
+        try:
+            actual = transliterate(input_text, spell_check=True)
+            
+            if actual == expected:
+                print(f"✓ PASS: {test_name}")
+                print(f"         Input:  {repr(input_text)}")
+                print(f"         Output: {repr(actual)}")
+                pass_count += 1
+            else:
+                print(f"✗ FAIL: {test_name}")
+                print(f"  Input:    {repr(input_text)}")
+                print(f"  Expected: {repr(expected)}")
+                print(f"  Got:      {repr(actual)}")
+                fail_count += 1
+        except Exception as e:
+            print(f"✗ ERROR: {test_name}")
+            print(f"  Input: {repr(input_text)}")
+            print(f"  Error: {e}")
+            fail_count += 1
+        
+        print()  # Blank line between tests
+    
+    # Print summary
+    print("=" * 60)
+    print(f"Unicode Test Results")
+    print(f"=" * 60)
+    print(f"Total tests: {len(unicode_tests)}")
+    print(f"Passed:      {pass_count} ({pass_count/len(unicode_tests)*100:.1f}%)")
+    print(f"Failed:      {fail_count} ({fail_count/len(unicode_tests)*100:.1f}%)")
+    print()
+    
+    return fail_count == 0
+
+
+def test_spell_check():
+    """Test spell checking and fuzzy matching capabilities."""
+    
+    print(f"Testing Spell Check Features")
+    print(f"=" * 60)
+    print()
+    
+    # Test cases for spell checking
+    spell_check_tests = [
+        # (input, expected_output, test_name)
+        ("mama gedra yanawa", "මම ගෙදර යනවා", "Typo: gedra → gedara"),
+        ("mama gedar yanawa", "මම ගෙදර යනවා", "Typo: gedar → gedara"),
+        ("eyala potha kiyawanwa", "එයාලා පොත කියවනවා", "Typo: kiyawanwa → kiyawanawa"),
+        ("oya baht kanawa", "ඔය බත් කනවා", "Typo: baht → bath"),
+        ("mama iskol yanawa", "මම ඉස්කෝලේ යනවා", "Typo: iskol → iskole"),
+        ("eyala watura bonwa", "එයාලා වතුර බොනවා", "Typo: bonwa → bonawa"),
+        ("mama computr hadanawa", "මම කොම්පියුටර් හදනවා", "Typo: computr → computer"),
+        ("oya telavision balanawa", "ඔය ටෙලිවිෂන් බලනවා", "Typo: telavision → television"),
+    ]
+    
+    pass_count = 0
+    fail_count = 0
+    
+    for input_text, expected, test_name in spell_check_tests:
+        try:
+            actual = transliterate(input_text, spell_check=True)
+            
+            if actual == expected:
+                print(f"✓ PASS: {test_name}")
+                print(f"         Input:  {repr(input_text)}")
+                print(f"         Output: {repr(actual)}")
+                pass_count += 1
+            else:
+                print(f"✗ FAIL: {test_name}")
+                print(f"  Input:    {repr(input_text)}")
+                print(f"  Expected: {repr(expected)}")
+                print(f"  Got:      {repr(actual)}")
+                fail_count += 1
+        except Exception as e:
+            print(f"✗ ERROR: {test_name}")
+            print(f"  Input: {repr(input_text)}")
+            print(f"  Error: {e}")
+            fail_count += 1
+        
+        print()  # Blank line between tests
+    
+    # Print summary
+    print("=" * 60)
+    print(f"Spell Check Test Results")
+    print(f"=" * 60)
+    print(f"Total tests: {len(spell_check_tests)}")
+    print(f"Passed:      {pass_count} ({pass_count/len(spell_check_tests)*100:.1f}%)")
+    print(f"Failed:      {fail_count} ({fail_count/len(spell_check_tests)*100:.1f}%)")
+    print()
+    
+    return fail_count == 0
+
+
 def test_preprocessing():
     """Test preprocessing capabilities."""
     
@@ -167,15 +285,32 @@ def test_module1():
         return 1
 
 if __name__ == "__main__":
-    # Run preprocessing tests first
+    # Run all test suites
     print("\n" + "="*60)
-    print("PART 1: PREPROCESSING TESTS")
+    print("MODULE 1 COMPREHENSIVE TEST SUITE")
+    print("="*60 + "\n")
+    
+    # Part 1: Unicode tests
+    print("\n" + "="*60)
+    print("PART 1: UNICODE HANDLING TESTS")
+    print("="*60 + "\n")
+    unicode_passed = test_unicode()
+    
+    # Part 2: Spell check tests
+    print("\n" + "="*60)
+    print("PART 2: SPELL CHECK TESTS")
+    print("="*60 + "\n")
+    spell_check_passed = test_spell_check()
+    
+    # Part 3: Preprocessing tests
+    print("\n" + "="*60)
+    print("PART 3: PREPROCESSING TESTS")
     print("="*60 + "\n")
     preprocessing_passed = test_preprocessing()
     
-    # Run corpus tests
+    # Part 4: Corpus tests
     print("\n" + "="*60)
-    print("PART 2: CORPUS TESTS")
+    print("PART 4: CORPUS TESTS")
     print("="*60 + "\n")
     corpus_exit_code = test_module1()
     
@@ -183,12 +318,25 @@ if __name__ == "__main__":
     print("\n" + "="*60)
     print("OVERALL TEST SUMMARY")
     print("="*60)
-    if preprocessing_passed and corpus_exit_code == 0:
-        print("✅ All tests passed (Preprocessing + Corpus)!")
+    
+    all_passed = (unicode_passed and spell_check_passed and 
+                  preprocessing_passed and corpus_exit_code == 0)
+    
+    if all_passed:
+        print("✅ All tests passed!")
+        print("   • Unicode Handling: ✓")
+        print("   • Spell Checking: ✓")
+        print("   • Preprocessing: ✓")
+        print("   • Corpus: ✓")
         sys.exit(0)
     else:
+        print("❌ Some tests failed:")
+        if not unicode_passed:
+            print("   • Unicode Handling: ✗")
+        if not spell_check_passed:
+            print("   • Spell Checking: ✗")
         if not preprocessing_passed:
-            print("❌ Preprocessing tests failed")
+            print("   • Preprocessing: ✗")
         if corpus_exit_code != 0:
-            print("❌ Corpus tests failed")
+            print("   • Corpus: ✗")
         sys.exit(1)

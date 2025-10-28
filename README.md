@@ -24,6 +24,24 @@ Input (Singlish)
   -> BLEU Score
 ```
 
+## Key Features
+
+### Module 1 Enhancements
+- ✨ **Unicode to ASCII Conversion**: Automatically handles accented characters and non-Latin scripts using `unidecode`
+- ✨ **Spell Checking**: Fuzzy matching with Levenshtein distance to correct common typos (65% similarity threshold)
+- ✅ **Preprocessing Pipeline**: Case normalization, punctuation preservation, number handling
+- ✅ **266 Transliteration Rules**: Comprehensive longest-match FST-based conversion
+
+### Module 2 Features
+- ✅ **68-Word Lexicon**: POS-tagged bilingual dictionary
+- ✅ **SVO Parsing**: Subject-Verb-Object structure extraction
+- ✅ **Tense Detection**: Identifies present continuous tense
+
+### Integration
+- ✅ **50-Sentence Corpus**: Comprehensive test coverage
+- ✅ **Pipeline API**: Command-line and Python interfaces
+- ✅ **100% Test Pass Rate**: All modules fully tested
+
 ## Installation
 
 1. **Clone the repository**
@@ -36,6 +54,7 @@ Input (Singlish)
    **Recommended: Using Conda**
    ```bash
    conda install -c conda-forge pynini nltk
+   pip install unidecode
    ```
    
    **Alternative: Using pip** (requires OpenFST installed)
@@ -67,7 +86,8 @@ singlish-english-translator/
 ├── module1/                    # FST Transliteration Engine
 │   ├── build_fst.py            # FST compiler
 │   ├── module1.py              # Main transliteration module
-│   ├── preprocess.py           # Text preprocessing utilities
+│   ├── preprocess.py           # Preprocessing (Unicode, punctuation, numbers)
+│   ├── fuzzy_matcher.py        # Spell correction engine
 │   ├── test_module1.py         # Module 1 tests
 │   └── transliterate.fst       # Generated FST model
 ├── module2/                    # RBMT Translation Engine

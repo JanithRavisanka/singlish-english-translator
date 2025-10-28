@@ -4,6 +4,7 @@ Student 1
 
 This module provides preprocessing functions to clean and normalize
 input text before FST transliteration. It handles:
+- Unicode to ASCII conversion (using unidecode)
 - Case normalization (uppercase to lowercase)
 - Whitespace cleaning
 - Punctuation preservation
@@ -13,6 +14,40 @@ input text before FST transliteration. It handles:
 
 import re
 import string
+from unidecode import unidecode
+
+def unicode_to_ascii(text):
+    """
+    Convert Unicode characters to their closest ASCII representation.
+    
+    This function uses unidecode to transliterate Unicode strings to ASCII.
+    Useful for handling:
+    - Accented characters (é → e, ñ → n)
+    - Non-Latin scripts that have romanization
+    - Mixed Unicode input
+    
+    Args:
+        text: Input string (may contain Unicode characters)
+        
+    Returns:
+        ASCII-only string
+        
+    Examples:
+        "café" → "cafe"
+        "naïve" → "naive"
+        "Москва" → "Moskva"
+        "北京" → "Bei Jing"
+    """
+    if not text:
+        return ""
+    
+    try:
+        return unidecode(text)
+    except Exception as e:
+        # If unidecode fails, return original text
+        print(f"Warning: Unicode conversion failed: {e}")
+        return text
+
 
 def normalize_text(text):
     """
@@ -188,13 +223,14 @@ def preprocess(text):
     Main preprocessing pipeline.
     
     This function combines all preprocessing steps:
+    0. Convert Unicode to ASCII (using unidecode)
     1. Validate input
     2. Normalize text (lowercase, whitespace)
     3. Separate punctuation
     4. Handle numbers
     
     Args:
-        text: Raw input string
+        text: Raw input string (may contain Unicode characters)
         
     Returns:
         tuple: (preprocessed_text, metadata)
@@ -202,12 +238,20 @@ def preprocess(text):
                - punctuation_map: for restoring punctuation
                - number_map: for restoring numbers
                - original_text: the original input
+               - ascii_converted: boolean indicating if Unicode was converted
                - warnings: list of warning messages
     """
     warnings = []
     
     # Store original
     original_text = text
+    
+    # Step 0: Convert Unicode to ASCII
+    ascii_text = unicode_to_ascii(text)
+    ascii_converted = (ascii_text != text)
+    if ascii_converted:
+        warnings.append(f"Unicode characters detected and converted to ASCII")
+    text = ascii_text
     
     # Validate
     is_valid, error_msg = validate_input(text)
@@ -228,6 +272,7 @@ def preprocess(text):
         'punctuation_map': punctuation_map,
         'number_map': number_map,
         'original_text': original_text,
+        'ascii_converted': ascii_converted,
         'warnings': warnings
     }
     

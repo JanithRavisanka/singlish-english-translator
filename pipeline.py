@@ -35,13 +35,14 @@ except ImportError as e:
     sys.exit(1)
 
 
-def translate_singlish(singlish_text: str, verbose: bool = False) -> Dict[str, Any]:
+def translate_singlish(singlish_text: str, verbose: bool = False, spell_check: bool = True) -> Dict[str, Any]:
     """
     Complete pipeline: Singlish → Sinhala → English
     
     Args:
         singlish_text: Input text in romanized Singlish
         verbose: If True, print intermediate steps
+        spell_check: If True, attempt to correct spelling mistakes (default: True)
         
     Returns:
         Dictionary containing:
@@ -51,6 +52,7 @@ def translate_singlish(singlish_text: str, verbose: bool = False) -> Dict[str, A
         - parse: Detailed parse structure from Module 2
         - success: Boolean indicating if translation succeeded
         - error: Error message if failed
+        - spell_corrections: List of spelling corrections made (if any)
     """
     result = {
         "input": singlish_text,

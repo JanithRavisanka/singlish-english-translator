@@ -20,6 +20,10 @@ Usage:
 import pynini
 import os
 from preprocess import preprocess, postprocess
+from fuzzy_matcher import FuzzyMatcher
+
+# Initialize fuzzy matcher once at module level
+_fuzzy_matcher = None
 
 # Load the compiled FST once at module import time
 # This makes transliteration very fast since we don't reload the FST each time
@@ -36,7 +40,7 @@ if not os.path.exists(fst_path):
 # Load the FST (done once when module is imported)
 _fst = pynini.Fst.read(fst_path)
 
-def transliterate(sinlish_text: str, verbose: bool = False) -> str:
+def transliterate(sinlish_text: str, verbose: bool = False, spell_check: bool = True) -> str:
     """
     Transliterate Singlish (Roman script) to Sinhala script with preprocessing.
     
@@ -50,11 +54,14 @@ def transliterate(sinlish_text: str, verbose: bool = False) -> str:
     2. Extract and preserve punctuation
     3. Handle numbers separately
     4. Validate input
+    5. (Optional) Apply fuzzy matching for spelling corrections
     
     Args:
         sinlish_text: Input text in Singlish (Roman script)
-                     Example: "Mama gedara yanawa!" or "mama gedara yanawa"
-        verbose: If True, print preprocessing warnings (default: False)
+                     Example: "Mama gedara yanawa!" or "mama gedra yanawa" (with typo)
+        verbose: If True, print preprocessing warnings and corrections (default: False)
+        spell_check: If True, attempt to correct spelling mistakes using fuzzy matching
+                     (default: True)
         
     Returns:
         Transliterated text in Sinhala script with punctuation/numbers restored
@@ -63,12 +70,36 @@ def transliterate(sinlish_text: str, verbose: bool = False) -> str:
     Raises:
         Exception: If the FST cannot transliterate the input
     """
+    global _fuzzy_matcher
+    
     if not sinlish_text:
         return ""
     
     try:
         # Step 1: Preprocess the input
         preprocessed_text, metadata = preprocess(sinlish_text)
+        
+        # Step 1.5: Apply spell checking if enabled
+        if spell_check:
+            # Initialize fuzzy matcher lazily (only when needed)
+            if _fuzzy_matcher is None:
+                _fuzzy_matcher = FuzzyMatcher(min_word_length=3, min_similarity=0.65)
+            
+            # Attempt to correct spelling mistakes
+            corrected_text, corrections = _fuzzy_matcher.correct_text(
+                preprocessed_text, 
+                verbose=verbose
+            )
+            
+            # Update metadata with corrections
+            if corrections:
+                metadata['spell_corrections'] = corrections
+                if verbose:
+                    print(f"Spell corrections applied:")
+                    for corr in corrections:
+                        print(f"  '{corr['original']}' → '{corr['corrected']}' "
+                              f"(confidence: {corr['confidence']:.2f})")
+                preprocessed_text = corrected_text
         
         # Show warnings if verbose mode
         if verbose and metadata['warnings']:

@@ -1,10 +1,13 @@
 # Singlish-to-English NLP Translator Dependencies
 
 # Module 1: FST Transliteration Engine
-pynini>=2.1.5
+# Note: pynini requires OpenFST C++ library
+# RECOMMENDED INSTALLATION:
+#   conda install -c conda-forge pynini
+pynini
 
 # Module 3: Evaluation
-nltk>=3.8
+nltk
 
 # Standard library (no installation needed)
 # json - for reading/writing shared data files

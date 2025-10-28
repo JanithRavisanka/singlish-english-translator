@@ -1,2 +1,217 @@
-{}
-
+{
+  "මම": {
+    "en": "I",
+    "pos": "PRON",
+    "role": "SUBJ"
+  },
+  "එයාලා": {
+    "en": "they",
+    "pos": "PRON",
+    "role": "SUBJ"
+  },
+  "ඔය": {
+    "en": "you",
+    "pos": "PRON",
+    "role": "SUBJ"
+  },
+  "ගෙදර": {
+    "en": "home",
+    "pos": "NOUN",
+    "role": "OBJ"
+  },
+  "ඉස්කෝලේ": {
+    "en": "school",
+    "pos": "NOUN",
+    "role": "OBJ"
+  },
+  "පොත": {
+    "en": "book",
+    "pos": "NOUN",
+    "role": "OBJ"
+  },
+  "බත්": {
+    "en": "rice",
+    "pos": "NOUN",
+    "role": "OBJ"
+  },
+  "වතුර": {
+    "en": "water",
+    "pos": "NOUN",
+    "role": "OBJ"
+  },
+  "කථා": {
+    "en": "talk",
+    "pos": "NOUN",
+    "role": "OBJ"
+  },
+  "ගේම්": {
+    "en": "game",
+    "pos": "NOUN",
+    "role": "OBJ"
+  },
+  "පාන්": {
+    "en": "bread",
+    "pos": "NOUN",
+    "role": "OBJ"
+  },
+  "ටෙලිවිෂන්": {
+    "en": "television",
+    "pos": "NOUN",
+    "role": "OBJ"
+  },
+  "තේ": {
+    "en": "tea",
+    "pos": "NOUN",
+    "role": "OBJ"
+  },
+  "සංගීතය": {
+    "en": "music",
+    "pos": "NOUN",
+    "role": "OBJ"
+  },
+  "ඔෆිස්": {
+    "en": "office",
+    "pos": "NOUN",
+    "role": "OBJ"
+  },
+  "කාර්": {
+    "en": "car",
+    "pos": "NOUN",
+    "role": "OBJ"
+  },
+  "ඩ්‍රයිව්": {
+    "en": "drive",
+    "pos": "NOUN",
+    "role": "OBJ"
+  },
+  "පාපන්දු": {
+    "en": "football",
+    "pos": "NOUN",
+    "role": "OBJ"
+  },
+  "ෆෝන්": {
+    "en": "phone",
+    "pos": "NOUN",
+    "role": "OBJ"
+  },
+  "වැඩ": {
+    "en": "work",
+    "pos": "NOUN",
+    "role": "OBJ"
+  },
+  "ගෙදර වැඩ": {
+    "en": "homework",
+    "pos": "NOUN",
+    "role": "OBJ"
+  },
+  "ක්‍රිකට්": {
+    "en": "cricket",
+    "pos": "NOUN",
+    "role": "OBJ"
+  },
+  "බස්": {
+    "en": "bus",
+    "pos": "NOUN",
+    "role": "OBJ"
+  },
+  "එකේ": {
+    "en": "in",
+    "pos": "PREP",
+    "role": "MODIFIER"
+  },
+  "කොම්පියුටර්": {
+    "en": "computer",
+    "pos": "NOUN",
+    "role": "OBJ"
+  },
+  "මෝල්": {
+    "en": "mall",
+    "pos": "NOUN",
+    "role": "OBJ"
+  },
+  "ෂොපිං": {
+    "en": "shopping",
+    "pos": "NOUN",
+    "role": "OBJ"
+  },
+  "ව්‍යායාම": {
+    "en": "exercise",
+    "pos": "NOUN",
+    "role": "OBJ"
+  },
+  "බයික්": {
+    "en": "bike",
+    "pos": "NOUN",
+    "role": "OBJ"
+  },
+  "රයිඩ්": {
+    "en": "ride",
+    "pos": "NOUN",
+    "role": "OBJ"
+  },
+  "පාටි": {
+    "en": "party",
+    "pos": "NOUN",
+    "role": "OBJ"
+  },
+  "ඩාන්ස්": {
+    "en": "dance",
+    "pos": "NOUN",
+    "role": "OBJ"
+  },
+  "ඊමේල්": {
+    "en": "email",
+    "pos": "NOUN",
+    "role": "OBJ"
+  },
+  "යනවා": {
+    "en": "go",
+    "pos": "VERB",
+    "tense": "PRESENT_CONTINUOUS"
+  },
+  "කියවනවා": {
+    "en": "read",
+    "pos": "VERB",
+    "tense": "PRESENT_CONTINUOUS"
+  },
+  "කනවා": {
+    "en": "eat",
+    "pos": "VERB",
+    "tense": "PRESENT_CONTINUOUS"
+  },
+  "බොනවා": {
+    "en": "drink",
+    "pos": "VERB",
+    "tense": "PRESENT_CONTINUOUS"
+  },
+  "කරනවා": {
+    "en": "do",
+    "pos": "VERB",
+    "tense": "PRESENT_CONTINUOUS"
+  },
+  "ලියනවා": {
+    "en": "write",
+    "pos": "VERB",
+    "tense": "PRESENT_CONTINUOUS"
+  },
+  "ගහනවා": {
+    "en": "play",
+    "pos": "VERB",
+    "tense": "PRESENT_CONTINUOUS"
+  },
+  "බලනවා": {
+    "en": "watch",
+    "pos": "VERB",
+    "tense": "PRESENT_CONTINUOUS"
+  },
+  "අහනවා": {
+    "en": "listen",
+    "pos": "VERB",
+    "tense": "PRESENT_CONTINUOUS"
+  },
+  "හදනවා": {
+    "en": "fix",
+    "pos": "VERB",
+    "tense": "PRESENT_CONTINUOUS"
+  }
+}

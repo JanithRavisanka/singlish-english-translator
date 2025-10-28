@@ -4,7 +4,7 @@ from typing import Dict, Any, List
 # --- Constants ---
 import os
 script_dir = os.path.dirname(os.path.abspath(__file__))
-LEXICON_FILE = os.path.join(script_dir, '..', 'lexicon.json') 
+LEXICON_FILE = os.path.join(script_dir, '..', 'data', 'lexicon.json') 
 
 # --- Module-level variable to hold the lexicon (Data Lookup) ---
 try:

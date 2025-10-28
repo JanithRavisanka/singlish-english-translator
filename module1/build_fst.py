@@ -19,9 +19,9 @@ import os
 def build_fst():
     """Build and compile the FST from singlish_rules.json."""
     
-    # Get the path to singlish_rules.json (in parent directory)
+    # Get the path to singlish_rules.json (in data directory)
     script_dir = os.path.dirname(os.path.abspath(__file__))
-    rules_path = os.path.join(script_dir, '..', 'singlish_rules.json')
+    rules_path = os.path.join(script_dir, '..', 'data', 'singlish_rules.json')
     
     print("Building FST from singlish_rules.json...")
     
@@ -61,7 +61,7 @@ if __name__ == "__main__":
         build_fst()
     except FileNotFoundError as e:
         print(f"Error: Could not find singlish_rules.json")
-        print(f"Make sure the file exists in the parent directory.")
+        print(f"Make sure the file exists in the data/ directory.")
         print(f"Details: {e}")
     except Exception as e:
         print(f"Error building FST: {e}")

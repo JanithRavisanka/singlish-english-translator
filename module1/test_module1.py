@@ -93,9 +93,9 @@ def test_preprocessing():
 def test_module1():
     """Run tests on the transliteration module."""
     
-    # Get path to corpus.json (in parent directory)
+    # Get path to corpus.json (in data directory)
     script_dir = os.path.dirname(os.path.abspath(__file__))
-    corpus_path = os.path.join(script_dir, '..', 'corpus.json')
+    corpus_path = os.path.join(script_dir, '..', 'data', 'corpus.json')
     
     # Load corpus
     try:
@@ -103,7 +103,7 @@ def test_module1():
             corpus = json.load(f)
     except FileNotFoundError:
         print(f"Error: Could not find corpus.json at {corpus_path}")
-        print("Please ensure corpus.json exists in the parent directory.")
+        print("Please ensure corpus.json exists in the data/ directory.")
         sys.exit(1)
     except json.JSONDecodeError as e:
         print(f"Error: corpus.json is not valid JSON: {e}")

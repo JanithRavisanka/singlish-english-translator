@@ -58,26 +58,59 @@ Input (Singlish)
 singlish-english-translator/
 ├── README.md
 ├── requirements.txt
-├── corpus.json                 # Shared test data
-├── singlish_rules.json         # Transliteration rules (Module 1)
-├── lexicon.json                # Bilingual dictionary (Module 2)
+├── pipeline.py                 # ⭐ Integrated Module 1 + 2 pipeline
+├── test_pipeline.py            # Pipeline integration tests
+├── data/                       # Shared data files
+│   ├── corpus.json             # 50 test sentences (Singlish, Sinhala, English)
+│   ├── singlish_rules.json     # 266 transliteration rules (Module 1)
+│   └── lexicon.json            # 68-word bilingual dictionary (Module 2)
 ├── module1/                    # FST Transliteration Engine
-│   ├── build_fst.py
-│   ├── module1.py
-│   ├── test_module1.py
+│   ├── build_fst.py            # FST compiler
+│   ├── module1.py              # Main transliteration module
+│   ├── preprocess.py           # Text preprocessing utilities
+│   ├── test_module1.py         # Module 1 tests
 │   └── transliterate.fst       # Generated FST model
 ├── module2/                    # RBMT Translation Engine
-│   ├── module2.py
-│   └── test_module2.py
-└── module3/                    # Post-Processor & Evaluator
-    ├── module3.py
-    ├── test_module3.py
-    ├── run_evaluation.py
+│   ├── module2.py              # Rule-based parser
+│   └── test_module2.py         # Module 2 tests
+└── module3/                    # Post-Processor & Evaluator (Not Yet Implemented)
+    ├── module3.py              # Post-processing rules
+    ├── test_module3.py         # Module 3 tests
+    ├── run_evaluation.py       # Evaluation runner
     ├── human_evaluation_sheet.csv
     └── evaluation_report.md
 ```
 
 ## Usage
+
+### Quick Start: Integrated Pipeline
+
+Translate Singlish directly to English using the integrated pipeline:
+
+```bash
+# Single translation
+python pipeline.py "mama gedara yanawa"
+
+# With detailed output
+python pipeline.py "eyala potha kiyawanawa" --verbose --parse
+
+# Interactive mode
+python pipeline.py --interactive
+
+# Test on full corpus
+python pipeline.py --test
+
+# Run pipeline test suite
+python test_pipeline.py
+```
+
+**Pipeline Output:**
+```
+Input (Singlish):  mama gedara yanawa
+Step 1 (Sinhala):  මම ගෙදර යනවා
+Step 2 (English):  I go home
+✓ Translation successful
+```
 
 ### Module 1: Build and Test FST
 
@@ -94,7 +127,7 @@ cd module2
 python test_module2.py       # Test RBMT engine
 ```
 
-### Module 3: Run Full Pipeline Evaluation
+### Module 3: Run Full Pipeline Evaluation (Not Yet Implemented)
 
 ```bash
 cd module3

@@ -213,5 +213,130 @@
     "en": "fix",
     "pos": "VERB",
     "tense": "PRESENT_CONTINUOUS"
+  },
+  "හොටෙල්": {
+    "en": "hotel",
+    "pos": "NOUN",
+    "role": "OBJ"
+  },
+  "සිංදු": {
+    "en": "song",
+    "pos": "NOUN",
+    "role": "OBJ"
+  },
+  "මොවී": {
+    "en": "movie",
+    "pos": "NOUN",
+    "role": "OBJ"
+  },
+  "රෙස්ටොරන්ට්": {
+    "en": "restaurant",
+    "pos": "NOUN",
+    "role": "OBJ"
+  },
+  "නිව්ස්": {
+    "en": "news",
+    "pos": "NOUN",
+    "role": "OBJ"
+  },
+  "කොෆි": {
+    "en": "coffee",
+    "pos": "NOUN",
+    "role": "OBJ"
+  },
+  "පික්චර්": {
+    "en": "picture",
+    "pos": "NOUN",
+    "role": "OBJ"
+  },
+  "මීටින්": {
+    "en": "meeting",
+    "pos": "NOUN",
+    "role": "OBJ"
+  },
+  "ප්‍රොජෙක්ට්": {
+    "en": "project",
+    "pos": "NOUN",
+    "role": "OBJ"
+  },
+  "ස්ටෝරි": {
+    "en": "story",
+    "pos": "NOUN",
+    "role": "OBJ"
+  },
+  "ලන්ච්": {
+    "en": "lunch",
+    "pos": "NOUN",
+    "role": "OBJ"
+  },
+  "ක්ලාස්": {
+    "en": "class",
+    "pos": "NOUN",
+    "role": "OBJ"
+  },
+  "ගිටාර්": {
+    "en": "guitar",
+    "pos": "NOUN",
+    "role": "OBJ"
+  },
+  "වීඩියෝ": {
+    "en": "video",
+    "pos": "NOUN",
+    "role": "OBJ"
+  },
+  "මැසේජ්": {
+    "en": "message",
+    "pos": "NOUN",
+    "role": "OBJ"
+  },
+  "ලයිබ්‍රරි": {
+    "en": "library",
+    "pos": "NOUN",
+    "role": "OBJ"
+  },
+  "බ්‍රේක්ෆාස්ට්": {
+    "en": "breakfast",
+    "pos": "NOUN",
+    "role": "OBJ"
+  },
+  "ට්‍රේන්": {
+    "en": "train",
+    "pos": "NOUN",
+    "role": "OBJ"
+  },
+  "රිපෝට්": {
+    "en": "report",
+    "pos": "NOUN",
+    "role": "OBJ"
+  },
+  "ප්‍රෝග්‍රෑම්": {
+    "en": "program",
+    "pos": "NOUN",
+    "role": "OBJ"
+  },
+  "ජුස්": {
+    "en": "juice",
+    "pos": "NOUN",
+    "role": "OBJ"
+  },
+  "පියානෝ": {
+    "en": "piano",
+    "pos": "NOUN",
+    "role": "OBJ"
+  },
+  "පාර්ක්": {
+    "en": "park",
+    "pos": "NOUN",
+    "role": "OBJ"
+  },
+  "ලෙටර්": {
+    "en": "letter",
+    "pos": "NOUN",
+    "role": "OBJ"
+  },
+  "නිව්ස්පේපර්": {
+    "en": "newspaper",
+    "pos": "NOUN",
+    "role": "OBJ"
   }
 }

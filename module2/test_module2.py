@@ -5,7 +5,7 @@ from module2 import LEXICON_FILE # Import the constants to ensure consistency
 
 # --- Constants ---
 script_dir = os.path.dirname(os.path.abspath(__file__))
-CORPUS_FILE = os.path.join(script_dir, '..', 'corpus.json')
+CORPUS_FILE = os.path.join(script_dir, '..', 'data', 'corpus.json')
 
 def run_tests():
     """Reads corpus data and tests the translate function from module2."""

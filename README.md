@@ -71,12 +71,19 @@ Input (Singlish)
    python -c "import nltk; nltk.download('punkt')"
    ```
 
+4. **Install Gradio for Web UI** (optional)
+   ```bash
+   pip install -r requirements_ui.txt
+   ```
+
 ## Project Structure
 
 ```
 singlish-english-translator/
 ├── README.md
 ├── requirements.txt
+├── requirements_ui.txt         # ⭐ UI dependencies
+├── app.py                      # ⭐ Gradio web interface
 ├── pipeline.py                 # ⭐ Integrated full pipeline
 ├── run_evaluation.py           # ⭐ Complete evaluation with BLEU scores
 ├── test_pipeline.py            # Pipeline integration tests
@@ -132,6 +139,28 @@ Step 1 (Sinhala):  මම ගෙදර යනවා
 Step 2 (English):  I go home
 ✓ Translation successful
 ```
+
+### Web Interface (Gradio UI)
+
+Launch the interactive web interface to see all pipeline stages visually:
+
+```bash
+python app.py
+```
+
+**Features:**
+- 🌐 Interactive web UI at http://127.0.0.1:7860
+- 📊 View all three pipeline stages (Sinhala, Raw English, Final English)
+- 🔍 See parse details (Subject, Verb, Object, Tense)
+- 💡 Click example sentences for quick testing
+- ✅ Real-time translation with visual feedback
+
+**Interface Displays:**
+1. **Module 1 Output:** Sinhala script transliteration
+2. **Module 2 Output:** Raw English with parse structure (SUBJ, VERB, OBJ)
+3. **Module 3 Output:** Fluent, grammatically correct English
+
+Perfect for demos, presentations, and understanding how the pipeline works!
 
 ### Module 1: Build and Test Transliteration
 

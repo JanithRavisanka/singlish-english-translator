@@ -1,0 +1,302 @@
+[
+  {
+    "id": 1,
+    "sinlish": "mama gedara yanawa",
+    "sinhala": "මම ගෙදර යනවා",
+    "english_reference": "I am going home."
+  },
+  {
+    "id": 2,
+    "sinlish": "eyala potha kiyawanawa",
+    "sinhala": "එයාලා පොත කියවනවා",
+    "english_reference": "They are reading the book."
+  },
+  {
+    "id": 3,
+    "sinlish": "oya bath kanawa",
+    "sinhala": "ඔය බත් කනවා",
+    "english_reference": "You are eating rice."
+  },
+  {
+    "id": 4,
+    "sinlish": "mama iskole yanawa",
+    "sinhala": "මම ඉස්කෝලේ යනවා",
+    "english_reference": "I am going to school."
+  },
+  {
+    "id": 5,
+    "sinlish": "eyala watura bonawa",
+    "sinhala": "එයාලා වතුර බොනවා",
+    "english_reference": "They are drinking water."
+  },
+  {
+    "id": 6,
+    "sinlish": "oya katha karanawa",
+    "sinhala": "ඔය කථා කරනවා",
+    "english_reference": "You are talking."
+  },
+  {
+    "id": 7,
+    "sinlish": "mama liyanawa",
+    "sinhala": "මම ලියනවා",
+    "english_reference": "I am writing."
+  },
+  {
+    "id": 8,
+    "sinlish": "eyala game gahanawa",
+    "sinhala": "එයාලා ගේම් ගහනවා",
+    "english_reference": "They are playing games."
+  },
+  {
+    "id": 9,
+    "sinlish": "mama paan kanawa",
+    "sinhala": "මම පාන් කනවා",
+    "english_reference": "I am eating bread."
+  },
+  {
+    "id": 10,
+    "sinlish": "oya television balanawa",
+    "sinhala": "ඔය ටෙලිවිෂන් බලනවා",
+    "english_reference": "You are watching television."
+  },
+  {
+    "id": 11,
+    "sinlish": "mama tea bonawa",
+    "sinhala": "මම තේ බොනවා",
+    "english_reference": "I am drinking tea."
+  },
+  {
+    "id": 12,
+    "sinlish": "eyala music ahanawa",
+    "sinhala": "එයාලා සංගීතය අහනවා",
+    "english_reference": "They are listening to music."
+  },
+  {
+    "id": 13,
+    "sinlish": "oya office yanawa",
+    "sinhala": "ඔය ඔෆිස් යනවා",
+    "english_reference": "You are going to the office."
+  },
+  {
+    "id": 14,
+    "sinlish": "mama car drive karanawa",
+    "sinhala": "මම කාර් ඩ්‍රයිව් කරනවා",
+    "english_reference": "I am driving a car."
+  },
+  {
+    "id": 15,
+    "sinlish": "eyala football gahanawa",
+    "sinhala": "එයාලා පාපන්දු ගහනවා",
+    "english_reference": "They are playing football."
+  },
+  {
+    "id": 16,
+    "sinlish": "oya phone karanawa",
+    "sinhala": "ඔය ෆෝන් කරනවා",
+    "english_reference": "You are making a phone call."
+  },
+  {
+    "id": 17,
+    "sinlish": "mama homework karanawa",
+    "sinhala": "මම ගෙදර වැඩ කරනවා",
+    "english_reference": "I am doing homework."
+  },
+  {
+    "id": 18,
+    "sinlish": "eyala cricket balanawa",
+    "sinhala": "එයාලා ක්‍රිකට් බලනවා",
+    "english_reference": "They are watching cricket."
+  },
+  {
+    "id": 19,
+    "sinlish": "oya bus eke yanawa",
+    "sinhala": "ඔය බස් එකේ යනවා",
+    "english_reference": "You are going by bus."
+  },
+  {
+    "id": 20,
+    "sinlish": "mama computer hadanawa",
+    "sinhala": "මම කොම්පියුටර් හදනවා",
+    "english_reference": "I am fixing the computer."
+  },
+  {
+    "id": 21,
+    "sinlish": "eyala mall eke shopping karanawa",
+    "sinhala": "එයාලා මෝල් එකේ ෂොපිං කරනවා",
+    "english_reference": "They are shopping at the mall."
+  },
+  {
+    "id": 22,
+    "sinlish": "oya exercise karanawa",
+    "sinhala": "ඔය ව්‍යායාම කරනවා",
+    "english_reference": "You are exercising."
+  },
+  {
+    "id": 23,
+    "sinlish": "mama bike ride karanawa",
+    "sinhala": "මම බයික් රයිඩ් කරනවා",
+    "english_reference": "I am riding a bike."
+  },
+  {
+    "id": 24,
+    "sinlish": "eyala party eke dance karanawa",
+    "sinhala": "එයාලා පාටි එකේ ඩාන්ස් කරනවා",
+    "english_reference": "They are dancing at the party."
+  },
+  {
+    "id": 25,
+    "sinlish": "oya email liyanawa",
+    "sinhala": "ඔය ඊමේල් ලියනවා",
+    "english_reference": "You are writing an email."
+  },
+  {
+    "id": 26,
+    "sinlish": "mama hotel eke kanawa",
+    "sinhala": "මම හොටෙල් එකේ කනවා",
+    "english_reference": "I am eating at the hotel."
+  },
+  {
+    "id": 27,
+    "sinlish": "eyala sindu gahanawa",
+    "sinhala": "එයාලා සිංදු ගහනවා",
+    "english_reference": "They are singing songs."
+  },
+  {
+    "id": 28,
+    "sinlish": "oya movie balanawa",
+    "sinhala": "ඔය මොවී බලනවා",
+    "english_reference": "You are watching a movie."
+  },
+  {
+    "id": 29,
+    "sinlish": "mama restaurant eke yanawa",
+    "sinhala": "මම රෙස්ටොරන්ට් එකේ යනවා",
+    "english_reference": "I am going to the restaurant."
+  },
+  {
+    "id": 30,
+    "sinlish": "eyala news ahanawa",
+    "sinhala": "එයාලා නිව්ස් අහනවා",
+    "english_reference": "They are listening to the news."
+  },
+  {
+    "id": 31,
+    "sinlish": "oya coffee bonawa",
+    "sinhala": "ඔය කොෆි බොනවා",
+    "english_reference": "You are drinking coffee."
+  },
+  {
+    "id": 32,
+    "sinlish": "mama picture gahanawa",
+    "sinhala": "මම පික්චර් ගහනවා",
+    "english_reference": "I am taking a picture."
+  },
+  {
+    "id": 33,
+    "sinlish": "eyala meeting eke yanawa",
+    "sinhala": "එයාලා මීටින් එකේ යනවා",
+    "english_reference": "They are going to the meeting."
+  },
+  {
+    "id": 34,
+    "sinlish": "oya project karanawa",
+    "sinhala": "ඔය ප්‍රොජෙක්ට් කරනවා",
+    "english_reference": "You are doing the project."
+  },
+  {
+    "id": 35,
+    "sinlish": "mama story kiyawanawa",
+    "sinhala": "මම ස්ටෝරි කියවනවා",
+    "english_reference": "I am reading a story."
+  },
+  {
+    "id": 36,
+    "sinlish": "eyala lunch kanawa",
+    "sinhala": "එයාලා ලන්ච් කනවා",
+    "english_reference": "They are eating lunch."
+  },
+  {
+    "id": 37,
+    "sinlish": "oya class eke yanawa",
+    "sinhala": "ඔය ක්ලාස් එකේ යනවා",
+    "english_reference": "You are going to class."
+  },
+  {
+    "id": 38,
+    "sinlish": "mama guitar gahanawa",
+    "sinhala": "මම ගිටාර් ගහනවා",
+    "english_reference": "I am playing the guitar."
+  },
+  {
+    "id": 39,
+    "sinlish": "eyala video balanawa",
+    "sinhala": "එයාලා වීඩියෝ බලනවා",
+    "english_reference": "They are watching a video."
+  },
+  {
+    "id": 40,
+    "sinlish": "oya message liyanawa",
+    "sinhala": "ඔය මැසේජ් ලියනවා",
+    "english_reference": "You are writing a message."
+  },
+  {
+    "id": 41,
+    "sinlish": "mama library eke kiyawanawa",
+    "sinhala": "මම ලයිබ්‍රරි එකේ කියවනවා",
+    "english_reference": "I am reading at the library."
+  },
+  {
+    "id": 42,
+    "sinlish": "eyala breakfast kanawa",
+    "sinhala": "එයාලා බ්‍රේක්ෆාස්ට් කනවා",
+    "english_reference": "They are eating breakfast."
+  },
+  {
+    "id": 43,
+    "sinlish": "oya train eke yanawa",
+    "sinhala": "ඔය ට්‍රේන් එකේ යනවා",
+    "english_reference": "You are going by train."
+  },
+  {
+    "id": 44,
+    "sinlish": "mama report liyanawa",
+    "sinhala": "මම රිපෝට් ලියනවා",
+    "english_reference": "I am writing a report."
+  },
+  {
+    "id": 45,
+    "sinlish": "eyala program balanawa",
+    "sinhala": "එයාලා ප්‍රෝග්‍රෑම් බලනවා",
+    "english_reference": "They are watching a program."
+  },
+  {
+    "id": 46,
+    "sinlish": "oya juice bonawa",
+    "sinhala": "ඔය ජුස් බොනවා",
+    "english_reference": "You are drinking juice."
+  },
+  {
+    "id": 47,
+    "sinlish": "mama piano gahanawa",
+    "sinhala": "මම පියානෝ ගහනවා",
+    "english_reference": "I am playing the piano."
+  },
+  {
+    "id": 48,
+    "sinlish": "eyala park eke yanawa",
+    "sinhala": "එයාලා පාර්ක් එකේ යනවා",
+    "english_reference": "They are going to the park."
+  },
+  {
+    "id": 49,
+    "sinlish": "oya letter liyanawa",
+    "sinhala": "ඔය ලෙටර් ලියනවා",
+    "english_reference": "You are writing a letter."
+  },
+  {
+    "id": 50,
+    "sinlish": "mama newspaper kiyawanawa",
+    "sinhala": "මම නිව්ස්පේපර් කියවනවා",
+    "english_reference": "I am reading the newspaper."
+  }
+]

@@ -1,0 +1,9 @@
+# UI Dependencies for Singlish-to-English Translator
+# Install with: pip install -r requirements_ui.txt
+
+# Gradio Web Interface
+gradio>=4.0.0
+
+# Note: Core dependencies (pynini, unidecode) should be installed separately
+# See requirements.txt for full system dependencies
+
